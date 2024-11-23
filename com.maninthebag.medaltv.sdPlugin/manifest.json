@@ -1,0 +1,61 @@
+{
+	"Name": "Medal.tv",
+	"Version": "0.1.0.0",
+	"Author": "maninthebag",
+	"Actions": [
+		{
+			"Name": "Counter",
+			"UUID": "com.maninthebag.medaltv.increment",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Displays a count, which increments by one on press.",
+			"PropertyInspectorPath": "ui/increment-counter.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"TitleAlignment": "middle"
+				}
+			]
+		},
+		{
+			"Name": "Press Button",
+			"UUID": "com.maninthebag.medaltv.pressbutton",
+			"Icon": "imgs/actions/pressbutton/icon",
+			"Tooltip": "KYS",
+			"PropertyInspectorPath": "ui/pressbutton.html",
+			"Controllers": ["Keypad"],
+			"States": [
+				{
+					"Image": "imgs/actions/pressbutton/key",
+					"TitleAlignment": "middle"
+				}
+			]
+		}
+	],
+	"Category": "Medal.tv",
+	"CategoryIcon": "imgs/plugin/category-icon",
+	"CodePath": "bin/plugin.js",
+	"Description": "Medal.tv Intergration With The Stream Deck",
+	"Icon": "imgs/plugin/marketplace",
+	"SDKVersion": 2,
+	"Software": {
+		"MinimumVersion": "6.4"
+	},
+	"OS": [
+		{
+			"Platform": "mac",
+			"MinimumVersion": "10.15"
+		},
+		{
+			"Platform": "windows",
+			"MinimumVersion": "10"
+		}
+	],
+	"Nodejs": {
+		"Version": "20",
+		"Debug": "enabled"
+	},
+	"UUID": "com.maninthebag.medaltv"
+}
