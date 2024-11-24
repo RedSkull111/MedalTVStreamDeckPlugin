@@ -1,7 +1,10 @@
-2024-11-23T23:14:21.226Z ERROR Process encountered uncaught exception 
-Error: The action's manifestId was not found within the manifest: com.maninthebag.medaltv.press-button
-    at ActionService.registerAction (C:\Users\jacka\OneDrive\Desktop\MedalPluginElgato\medaltv\node_modules\@elgato\streamdeck\dist\index.js:2635:19)
-    at <anonymous> (C:\Users\jacka\OneDrive\Desktop\MedalPluginElgato\medaltv\src\plugin.ts:11:20)
-    at ModuleJob.run (node:internal/modules/esm/module_job:234:25)
-    at async ModuleLoader.import (node:internal/modules/esm/loader:473:24)
-    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:123:5)
+2024-11-23T23:49:58.362Z DEBUG RegistrationParameters: port=28196
+2024-11-23T23:49:58.364Z DEBUG RegistrationParameters: pluginUUID=C3573C1BA77B1FE6C7E6BE92F8385B0C
+2024-11-23T23:49:58.364Z DEBUG RegistrationParameters: registerEvent=registerPlugin
+2024-11-23T23:49:58.365Z DEBUG RegistrationParameters: info={"application":{"font":"Segoe UI","language":"en","platform":"windows","platformVersion":"10.0.22631","version":"6.8.0.21252"},"colors":{"buttonMouseOverBackgroundColor":"#464646FF","buttonPressedBackgroundColor":"#303030FF","buttonPressedBorderColor":"#646464FF","buttonPressedTextColor":"#969696FF","highlightColor":"#0078FFFF"},"devicePixelRatio":1,"devices":[{"id":"7F48C3720F2BE98EFC524EFC47D23C12","name":"Stream Deck 2","size":{"columns":5,"rows":3},"type":0},{"id":"7F12B26789C1853C992B10B1B94B3D2B","name":"Stream Deck Mobile","size":{"columns":8,"rows":8},"type":3}],"plugin":{"uuid":"com.maninthebag.medaltv","version":"0.1.0.0"}}
+2024-11-23T23:49:58.375Z TRACE Connection: {"device":"7F12B26789C1853C992B10B1B94B3D2B","deviceInfo":{"name":"Stream Deck Mobile","size":{"columns":8,"rows":8},"type":3},"event":"deviceDidConnect"}
+2024-11-23T23:49:58.376Z TRACE Connection: {"action":"com.maninthebag.medaltv.increment","context":"2edcd55a270cfe01707a32aaa80fd6d4","device":"7F48C3720F2BE98EFC524EFC47D23C12","event":"willAppear","payload":{"controller":"Keypad","coordinates":{"column":3,"row":1},"isInMultiAction":false,"settings":{}}}
+2024-11-23T23:49:58.377Z TRACE Connection: {"action":"com.maninthebag.medaltv.increment","context":"2edcd55a270cfe01707a32aaa80fd6d4","device":"7F48C3720F2BE98EFC524EFC47D23C12","event":"titleParametersDidChange","payload":{"controller":"Keypad","coordinates":{"column":3,"row":1},"settings":{},"state":0,"title":"","titleParameters":{"fontFamily":"","fontSize":9,"fontStyle":"","fontUnderline":false,"showTitle":true,"titleAlignment":"middle","titleColor":"#ffffff"}}}
+2024-11-23T23:49:58.378Z TRACE Connection: {"action":"com.maninthebag.medaltv.pressbutton","context":"96908fcfcc96a5b5a29ea2aeea209412","device":"7F12B26789C1853C992B10B1B94B3D2B","event":"willAppear","payload":{"controller":"Keypad","coordinates":{"column":2,"row":0},"isInMultiAction":false,"settings":{}}}
+2024-11-23T23:49:58.378Z TRACE Connection: {"action":"com.maninthebag.medaltv.pressbutton","context":"96908fcfcc96a5b5a29ea2aeea209412","device":"7F12B26789C1853C992B10B1B94B3D2B","event":"titleParametersDidChange","payload":{"controller":"Keypad","coordinates":{"column":2,"row":0},"settings":{},"state":0,"title":"","titleParameters":{"fontFamily":"","fontSize":9,"fontStyle":"","fontUnderline":false,"showTitle":true,"titleAlignment":"middle","titleColor":"#ffffff"}}}
+2024-11-23T23:49:58.379Z TRACE Connection: {"event":"setTitle","context":"2edcd55a270cfe01707a32aaa80fd6d4","payload":{"title":"0"}}

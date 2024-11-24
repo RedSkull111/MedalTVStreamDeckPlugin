@@ -7945,10 +7945,55 @@ typeof SuppressedError === "function" ? SuppressedError : function (error, suppr
 };
 
 /**
+ * An example action class that displays a count that increments by one each time the button is pressed.
+ */
+let IncrementCounter = (() => {
+    let _classDecorators = [action({ UUID: "com.maninthebag.medaltv.increment" })];
+    let _classDescriptor;
+    let _classExtraInitializers = [];
+    let _classThis;
+    let _classSuper = SingletonAction;
+    (class extends _classSuper {
+        static { _classThis = this; }
+        static {
+            const _metadata = typeof Symbol === "function" && Symbol.metadata ? Object.create(_classSuper[Symbol.metadata] ?? null) : void 0;
+            __esDecorate(null, _classDescriptor = { value: _classThis }, _classDecorators, { kind: "class", name: _classThis.name, metadata: _metadata }, null, _classExtraInitializers);
+            _classThis = _classDescriptor.value;
+            if (_metadata) Object.defineProperty(_classThis, Symbol.metadata, { enumerable: true, configurable: true, writable: true, value: _metadata });
+            __runInitializers(_classThis, _classExtraInitializers);
+        }
+        /**
+         * The {@link SingletonAction.onWillAppear} event is useful for setting the visual representation of an action when it becomes visible. This could be due to the Stream Deck first
+         * starting up, or the user navigating between pages / folders etc.. There is also an inverse of this event in the form of {@link streamDeck.client.onWillDisappear}. In this example,
+         * we're setting the title to the "count" that is incremented in {@link IncrementCounter.onKeyDown}.
+         */
+        onWillAppear(ev) {
+            return ev.action.setTitle(`${ev.payload.settings.count ?? 0}`);
+        }
+        /**
+         * Listens for the {@link SingletonAction.onKeyDown} event which is emitted by Stream Deck when an action is pressed. Stream Deck provides various events for tracking interaction
+         * with devices including key down/up, dial rotations, and device connectivity, etc. When triggered, {@link ev} object contains information about the event including any payloads
+         * and action information where applicable. In this example, our action will display a counter that increments by one each press. We track the current count on the action's persisted
+         * settings using `setSettings` and `getSettings`.
+         */
+        async onKeyDown(ev) {
+            // Update the count from the settings.
+            const { settings } = ev.payload;
+            settings.incrementBy ??= 1;
+            settings.count = (settings.count ?? 0) + settings.incrementBy;
+            // Update the current count in the action's settings, and change the title.
+            await ev.action.setSettings(settings);
+            await ev.action.setTitle(`${settings.count}`);
+        }
+    });
+    return _classThis;
+})();
+
+/**
  * An action that logs a Stream Deck key press.
  */
 let LogKeyPressAction = (() => {
-    let _classDecorators = [action({ UUID: "com.maninthebag.medaltv.press-button" })];
+    let _classDecorators = [action({ UUID: "com.maninthebag.medaltv.pressbutton" })];
     let _classDescriptor;
     let _classExtraInitializers = [];
     let _classThis;
@@ -7976,7 +8021,7 @@ let LogKeyPressAction = (() => {
 // We can enable "trace" logging so that all messages between the Stream Deck, and the plugin are recorded. When storing sensitive information
 streamDeck.logger.setLevel(LogLevel.TRACE);
 // Register the increment action.
-//streamDeck.actions.registerAction(new IncrementCounter());
+streamDeck.actions.registerAction(new IncrementCounter());
 streamDeck.actions.registerAction(new LogKeyPressAction());
 // Finally, connect to the Stream Deck.
 streamDeck.connect();
