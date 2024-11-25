@@ -1,7 +1,7 @@
 {
     "scripts": {
         "build": "rollup -c",
-        "watch": "rollup -c -w --watch.onEnd=\"streamdeck restart com.maninthebag.medaltv\""
+        "watch": "rollup -c -w --watch.onEnd=\"streamdeck restart com.maninthebag.medaltvi\""
     },
     "type": "module",
     "devDependencies": {

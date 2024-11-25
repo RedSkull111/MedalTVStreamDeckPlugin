@@ -6,7 +6,7 @@ import path from "node:path";
 import url from "node:url";
 
 const isWatching = !!process.env.ROLLUP_WATCH;
-const sdPlugin = "com.maninthebag.medaltv.sdPlugin";
+const sdPlugin = "com.maninthebag.medaltvi.sdPlugin";
 
 /**
  * @type {import('rollup').RollupOptions}

@@ -1,0 +1,58 @@
+{
+	"Name": "MedalTV",
+	"Version": "0.1.0.0",
+	"Author": "ManInTheBag",
+	"Actions": [
+		{
+			"Name": "Counter",
+			"UUID": "com.maninthebag.medaltvi.increment",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Displays a count, which increments by one on press.",
+			"PropertyInspectorPath": "ui/increment-counter.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"TitleAlignment": "middle"
+				}
+			]
+		},
+		{
+			"Name": "test",
+			"UUID": "com.maninthebag.medaltvi.startrec",
+			"Icon": "static/imgs/actions/counter/icon",
+			"Tooltip": "Test Button",
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key"
+				}
+			]
+		}
+	],
+	"Category": "MedalTV",
+	"CategoryIcon": "imgs/plugin/category-icon",
+	"CodePath": "bin/plugin.js",
+	"Description": "Medal.TV Intergration With Elgato Stream Deck",
+	"Icon": "imgs/plugin/marketplace",
+	"SDKVersion": 2,
+	"Software": {
+		"MinimumVersion": "6.4"
+	},
+	"OS": [
+		{
+			"Platform": "mac",
+			"MinimumVersion": "10.15"
+		},
+		{
+			"Platform": "windows",
+			"MinimumVersion": "10"
+		}
+	],
+	"Nodejs": {
+		"Version": "20",
+		"Debug": "enabled"
+	},
+	"UUID": "com.maninthebag.medaltvi"
+}
